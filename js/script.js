@@ -49,10 +49,13 @@ function newItem() {
     } else {
         $('#list').append(currentLine);
     }
-    //
+    //Make text decoration line
     function makeLine() {
         currentLine.toggleClass('strike');
     }
-
     currentLine.on('dblclick', makeLine);
+    //Make a remove button
+    var removeButton = $('<button-remove></button-remove>');
+    removeButton.append(document.createTextNode('X'));
+    currentLine.append(removeButton);
 }
