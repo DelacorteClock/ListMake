@@ -13,6 +13,8 @@ function modeSelect(mode, style, item, tCol1) {
 
 //Allow users to select values in the future
 modeSelect('Clothing','Inventory','clothing item','#6E3219');
+//modeSelect('Vehicle','Index','vehicle','#B933AD');
+//modeSelect('Skyscraper','Inventory','skyscraper','#5E9732');
 
 //ACTUAL PROJECT
 function newItem() {
