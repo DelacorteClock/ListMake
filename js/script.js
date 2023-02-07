@@ -1,42 +1,20 @@
-
-function temp() {
-
-//javascript
-//1. Adding a new item to the list of items: 
-    var li = document.createElement('li');
-    var inputValue = document.getElementById('input').value;
-    var text = document.createTextNode(inputValue);
-    li.appendChild(text);
-
-    if (inputValue === '') {
-        alert('No Inputted Destination');
-    } else {
-        var list = document.querySelector('#list');
-        list.appendChild(li);
-    }
-
-    //2. Crossing out an item from the list of items:
-    function makeLine() {
-        li.classList.toggle('strike');
-    }
-
-    li.addEventListener('dblclick', makeLine);
-
-    //3(i). Adding the delete button 'X': 
-    var removeButton = document.createElement('removeButton');
-    removeButton.appendChild(document.createTextNode('X'));
-    li.appendChild(removeButton);
-    removeButton.addEventListener('click', deleteListItem);
-
-    //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
-    function deleteListItem() {
-        li.classList.add('delete')
-    }
-    // 4. Reordering the items: 
-    $('#list').sortable();
-
+//SUPPLEMENTARY CONTENT: ADAPT IN FUTURE
+function modeSelect(mode, style, item, tCol1) {
+    //Name the list
+    listName = mode + style;
+    //Name the page
+    $('.page-title').text(listName);
+    //Type instructions
+    var instruction = $(`<p>Double click a ${item} to make a line through it, click 'x' to delete the ${item} or drag the ${item}s to reorder them.</p>`);
+    $('#instruction-container').append(instruction);
+    //Set page background colour and main text colour
+    $('body').attr('style',`background-color: ${tCol1}`);
 }
 
+//Allow users to select values in the future
+modeSelect('Clothing','Inventory','clothing item','#6E3219');
+
+//ACTUAL PROJECT
 function newItem() {
     //Translated initial variables
     var currentLine = $('<li></li>');
@@ -50,12 +28,19 @@ function newItem() {
         $('#list').append(currentLine);
     }
     //Make text decoration line
-    function makeLine() {
+    function makeStrike() {
         currentLine.toggleClass('strike');
     }
-    currentLine.on('dblclick', makeLine);
+    currentLine.on('dblclick', makeStrike);
     //Make a remove button
     var removeButton = $('<button-remove></button-remove>');
     removeButton.append(document.createTextNode('X'));
     currentLine.append(removeButton);
+    //Make remove button work
+    function deleteLine() {
+        currentLine.addClass('delete');
+    }
+    removeButton.on('click', deleteLine);
+    //Make list draggable
+    $('#list').sortable();
 }

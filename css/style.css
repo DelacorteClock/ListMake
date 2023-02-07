@@ -17,7 +17,7 @@
     /**COLOUR**/
     --keybrown: #6E3219;
     --white: #FFF;
-    --black: #000;
+    --black: #351c15;
     --buttoncolour: #6CBE45;
     --deletecolour: #E56DB1;
     --highlight: #BED2E9;
@@ -112,7 +112,7 @@ ol {
 
 ol li {
     padding: 5px;
-    color: #000;
+    color: var(--black);
     counter-increment: customlistcounter;
 }
 
