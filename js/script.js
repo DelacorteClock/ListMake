@@ -1,3 +1,8 @@
+//Allow users to select values in the future
+modeSelect('Clothing','Inventory','clothing item','#6E3219');
+//modeSelect('Vehicle','Index','vehicle','#B933AD');
+//modeSelect('Skyscraper','Inventory','skyscraper','#5E9732');
+
 //SUPPLEMENTARY CONTENT: ADAPT IN FUTURE
 function modeSelect(mode, style, item, tCol1) {
     //Name the list
@@ -10,11 +15,6 @@ function modeSelect(mode, style, item, tCol1) {
     //Set page background colour and main text colour
     $('body').attr('style',`background-color: ${tCol1}`);
 }
-
-//Allow users to select values in the future
-modeSelect('Clothing','Inventory','clothing item','#6E3219');
-//modeSelect('Vehicle','Index','vehicle','#B933AD');
-//modeSelect('Skyscraper','Inventory','skyscraper','#5E9732');
 
 //ACTUAL PROJECT
 function newItem() {
