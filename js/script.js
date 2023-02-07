@@ -38,14 +38,16 @@ function newItem() {
 }
 
 function temp() {
-    var li = $('<li></li>');
+    //Translated initial variables
+    var currentLine = $('<li></li>');
     var inputValue = $('#input').val();
-    li.append(inputValue);
-
-    if (inputValue === '') {
-        alert('You must write something!');
+    //Give input value to current line
+    currentLine.append(inputValue);
+    //Check if inputted string is empty
+    if (!inputValue) {
+        alert('NO DESTINATION INPUTTED');
     } else {
-        $('#list').append(li);
+        $('#list').append(currentLine);
     }
 
 }
