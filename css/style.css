@@ -32,6 +32,8 @@
 
 * {
     box-sizing: border-box;
+    /*Disable selection to avoid highlighting issues*/
+    user-select: none;
 }
 
 body {
@@ -106,12 +108,12 @@ ol {
 
 ol li {
     padding: 5px;
-    color:#000;
+    color: #000;
     counter-increment: customlistcounter;
 }
 
 ol li:before {
-    content: counter(customlistcounter) " ";
+    content: counter(customlistcounter) ' ';
 }
 
 ol li:nth-child(even){
