@@ -36,6 +36,10 @@
     user-select: none;
 }
 
+::selection {
+    background-color: var(--white) !important;
+}
+
 body {
     font-family: MF, sans-serif;
     word-wrap: break-word;
