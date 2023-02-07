@@ -1,5 +1,5 @@
 
-function newItem() {
+function temp() {
 
 //javascript
 //1. Adding a new item to the list of items: 
@@ -16,11 +16,11 @@ function newItem() {
     }
 
     //2. Crossing out an item from the list of items:
-    function crossOut() {
+    function makeLine() {
         li.classList.toggle('strike');
     }
 
-    li.addEventListener('dblclick', crossOut);
+    li.addEventListener('dblclick', makeLine);
 
     //3(i). Adding the delete button 'X': 
     var removeButton = document.createElement('removeButton');
@@ -37,7 +37,7 @@ function newItem() {
 
 }
 
-function temp() {
+function newItem() {
     //Translated initial variables
     var currentLine = $('<li></li>');
     var inputValue = $('#input').val();
@@ -49,5 +49,10 @@ function temp() {
     } else {
         $('#list').append(currentLine);
     }
+    //
+    function makeLine() {
+        currentLine.toggleClass('strike');
+    }
 
+    currentLine.on('dblclick', makeLine);
 }
